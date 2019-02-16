@@ -448,7 +448,7 @@ INSTALL(TARGETS libmariadb
         DESTINATION ${INSTALL_LIBDIR})
 
 
-IF(WIN32)
+IF(MSVC)
    # On Windows, install PDB
    INSTALL(FILES $<TARGET_PDB_FILE:libmariadb> DESTINATION "${INSTALL_LIBDIR}"
            COMPONENT Development)
