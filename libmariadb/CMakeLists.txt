@@ -25,7 +25,11 @@ SET(MARIADB_LIB_SYMBOLS
  mariadb_reconnect
  mysql_stmt_warning_count)
 IF(WITH_SSL)
-  SET(MARIADB_LIB_SYMBOLS ${MARIADB_LIB_SYMBOLS} mariadb_deinitialize_ssl)
+  SET(MARIADB_LIB_SYMBOLS ${MARIADB_LIB_SYMBOLS})
+  
+  IF(NOT MINGW)
+	LIST(APPEND MARIADB_LIB_SYMBOLS mariadb_deinitialize_ssl)
+  ENDIF()
 ENDIF()
 
 SET(MYSQL_LIB_SYMBOLS
