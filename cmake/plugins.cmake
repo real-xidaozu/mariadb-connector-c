@@ -63,7 +63,7 @@ FUNCTION(REGISTER_PLUGIN)
         set(CC_PLUGIN_SOURCES ${CC_PLUGIN_SOURCES} ${CC_BINARY_DIR}/win/${target}.rc)
 		
 		if(MSVC)
-			 list(APPEND CC_PLUGIN_SOURCES ${CC_SOURCE_DIR}/plugins/plugin.def)
+			 list(APPEND ${CC_PLUGIN_SOURCES} ${CC_SOURCE_DIR}/plugins/plugin.def)
 		endif()
       endif()
       add_library(${CC_PLUGIN_TARGET} MODULE ${CC_PLUGIN_SOURCES})
